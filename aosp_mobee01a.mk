@@ -15,8 +15,8 @@
 
 $(call inherit-product, device/LYF/mobee01a/full_mobee01a.mk)
 
-# Inherit some common AOSiP stuff.
-$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
+# APN(s)
+PRODUCT_COPY_FILES += device/LYF/mobee01a/apns-conf.xml:system/etc/apns-conf.xml
 
 # Must define platform variant before including any common things
 TARGET_BOARD_PLATFORM_VARIANT := msm8939
@@ -25,6 +25,14 @@ PRODUCT_NAME := aosp_mobee01a
 BOARD_VENDOR := LYF
 PRODUCT_DEVICE := mobee01a
 
+# Device Identifiers
+PRODUCT_BUILD_PROP_OVERRIDES += \
+     PRODUCT_MODEL="LS-5015" \
+     PRODUCT_NAME="LYF Water 8" \
+     PRODUCT_DEVICE="mobee01a"
+
+PRODUCT_PROPERTY_OVERRIDES += \
+     ro.build.product=Kraft-A6000
 TARGET_BOOT_ANIMATION_RES := 720
 
 PRODUCT_GMS_CLIENTID_BASE := android-ckt
@@ -38,5 +46,4 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 
 BUILD_FINGERPRINT := LYF/LS-5015/LS-5015:6.0.1/MMB29M/434:user/release-keys
 
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    DEVICE_MAINTAINERS="Mohd Faraz (AndroiableDroid)"
+
