@@ -360,5 +360,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     vndk-sp
 
+# Camera configuration
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    camera.disable_zsl_mode=0 \
+    persist.camera.HAL3.enabled=1 \
+    persist.camera.ois.disable=0
+
 # Call the proprietary setup
 $(call inherit-product, vendor/LYF/mobee01a/mobee01a-vendor.mk)
