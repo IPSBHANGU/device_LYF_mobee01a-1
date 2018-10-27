@@ -274,8 +274,7 @@ PRODUCT_PACKAGES += \
     camera.msm8916 \
     libmm-qcamera \
     libboringssl-compat \
-    Snap \
-    Camera2
+    GoogleCamera
 
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
